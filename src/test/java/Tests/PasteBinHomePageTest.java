@@ -5,6 +5,7 @@ import PageObjects.PasteBinHomePage;
 import PageObjects.PasteBinSubmitted;
 import org.assertj.core.api.SoftAssertions;
 import org.junit.After;
+import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -43,8 +44,8 @@ public class PasteBinHomePageTest {
     }
 
     @After
-    public void closeWindow() throws InterruptedException {
-        pasteBinHomePage.closeWindow();
+    public void closeWindow() {
+        pasteBinHomePage = null;//.closeWindow();
     }
 
 }
