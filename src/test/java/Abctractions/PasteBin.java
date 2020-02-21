@@ -1,6 +1,7 @@
 package Abctractions;
 
 import org.openqa.selenium.PageLoadStrategy;
+import org.openqa.selenium.Proxy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -25,6 +26,9 @@ public abstract class PasteBin {
         options.addArguments("--dns-prefetch-disable");
         options.addArguments("--disable-gpu");
         options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
+        Proxy proxy = new Proxy();
+        proxy.setHttpProxy("proxy.lan:3128");
+        options.setProxy(proxy);
         driver = new ChromeDriver(options);
         PageFactory.initElements(driver, this);
         driver.manage().window().maximize();
