@@ -7,6 +7,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.Arrays;
 
@@ -20,8 +23,13 @@ public class PasteBinHomePage extends PasteBin {
         super("https://pastebin.com/");
     }
 
+    @FindBy(name = "paste_code")
+    private WebElement fieldNewPaste;
+
     public PasteBinHomePage inputNewPaste(String newPaste) {
-        WebElement fieldNewPaste = driver.findElement(By.name("paste_code"));
+//        WebElement fieldNewPaste = driver.findElement(By.name());
+        new WebDriverWait(driver,10)
+                .until(ExpectedConditions.visibilityOf(fieldNewPaste));
         fieldNewPaste.sendKeys(newPaste);
         return this;
     }

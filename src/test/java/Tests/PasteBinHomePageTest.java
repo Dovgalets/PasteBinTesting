@@ -14,15 +14,15 @@ public class PasteBinHomePageTest {
 
     @Before
     public void openWindow() {
-         pasteBinHomePage = new PasteBinHomePage();
+        pasteBinHomePage = new PasteBinHomePage();
     }
 
     @Test
     public void pasteTestICanWin() {
-        pasteBinHomePage.inputNewPaste("Hello from WebDriver")
-                .selectionPasteExpiration(PasteBinHomePage.PasteExpiration.Minutes10)
-                .inputPasteNameTitle("helloweb")
-                .pressCreateNewPasteButton();
+        pasteBinHomePage.inputNewPaste("Hello from WebDriver");
+//                .selectionPasteExpiration(PasteBinHomePage.PasteExpiration.Minutes10)
+//                .inputPasteNameTitle("helloweb")
+//                .pressCreateNewPasteButton();
     }
 
     @Test
@@ -39,13 +39,12 @@ public class PasteBinHomePageTest {
         softAssertions.assertThat(pasteBinSubmitted.getTitle()).isEqualTo(expectedTitle);
         softAssertions.assertThat(pasteBinSubmitted.getText()).isEqualTo(expectedBinData);
         softAssertions.assertThat(pasteBinSubmitted.getClass("git")).isNotEqualTo(pasteBinSubmitted.getClass("in"));
-
         softAssertions.assertAll();
     }
 
     @After
     public void closeWindow() {
-        pasteBinHomePage = null;//.closeWindow();
+        pasteBinHomePage.closeWindow();
     }
 
 }
