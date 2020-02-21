@@ -14,7 +14,7 @@ public class PasteBinHomePageTest {
 
     @Before
     public void openWindow() {
-        pasteBinHomePage = new PasteBinHomePage();
+         pasteBinHomePage = new PasteBinHomePage();
     }
 
     @Test
