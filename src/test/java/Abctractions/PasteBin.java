@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit;
 
 public abstract class PasteBin {
     static {
-        System.setProperty("webdriver.chrome.driver", "resources/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "src/resources/chromedriver.exe");
     }
     public static WebDriver driver;
 
