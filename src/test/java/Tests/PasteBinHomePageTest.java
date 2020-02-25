@@ -19,10 +19,10 @@ public class PasteBinHomePageTest {
 
     @Test
     public void pasteTestICanWin() {
-        pasteBinHomePage.inputNewPaste("Hello from WebDriver");
-//                .selectionPasteExpiration(PasteBinHomePage.PasteExpiration.Minutes10)
-//                .inputPasteNameTitle("helloweb")
-//                .pressCreateNewPasteButton();
+        pasteBinHomePage.inputNewPaste("Hello from WebDriver")
+                .selectionPasteExpiration(PasteBinHomePage.PasteExpiration.Minutes10)
+                .inputPasteNameTitle("helloweb")
+                .pressCreateNewPasteButton();
     }
 
     @Test

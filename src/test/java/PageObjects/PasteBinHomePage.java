@@ -41,30 +41,39 @@ public class PasteBinHomePage extends PasteBin {
         }
         return arrowDownSequence;
     }
-
+@FindBy(xpath = "//span[text()='Never']")
+private WebElement webElement;
     public PasteBinHomePage selectionPasteExpiration(PasteExpiration expiration) {
-        new Actions(driver).moveToElement(driver.findElement(By.xpath("//span[text()='Never']"))).click()
+//        new Actions(driver).moveToElement(driver.findElement(By.xpath("//span[text()='Never']"))).click()
+        new Actions(driver).moveToElement(webElement).click()
                 .sendKeys(getArrowDownSequence(expiration.ordinal()))
                 .sendKeys(Keys.ENTER)
                 .build().perform();
         return this;
     }
 
+    @FindBy(name = "paste_name")
+    private WebElement fieldPasteName;
+
     public PasteBinHomePage inputPasteNameTitle(String name) {
-        WebElement fieldPasteName = driver.findElement(By.name("paste_name"));
+//        WebElement fieldPasteName = driver.findElement(By.name("paste_name"));
         fieldPasteName.sendKeys(name);
         return this;
     }
 
+    @FindBy(name = "submit")
+    private WebElement buttonCreateNewPaste;
     public PasteBinSubmitted pressCreateNewPasteButton() {
-        WebElement buttonCreateNewPaste = driver.findElement(By.name("submit"));
+//        WebElement buttonCreateNewPaste = driver.findElement(By.name("submit"));
         buttonCreateNewPaste.click();
 
         return new PasteBinSubmitted();
     }
 
+    @FindBy(xpath = "//span[text()='None']")
+    private WebElement webElement2;
     public PasteBinHomePage selectionSyntaxHighlighting(SyntaxHighlighting syntax) {
-        new Actions(driver).moveToElement(driver.findElement(By.xpath("//span[text()='None']"))).click().
+        new Actions(driver).moveToElement(webElement2).click().
                 sendKeys(getArrowDownSequence(syntax.ordinal()))
                 .sendKeys(Keys.ENTER)
                 .build().perform();
