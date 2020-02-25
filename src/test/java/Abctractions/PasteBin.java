@@ -19,7 +19,6 @@ public abstract class PasteBin {
     }
 
     public PasteBin(String url) {
-//        this();
         ChromeOptions options = new ChromeOptions();
         options.addArguments("enable-automation");
         options.addArguments("--headless");
