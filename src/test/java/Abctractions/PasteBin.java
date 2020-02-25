@@ -27,6 +27,7 @@ public abstract class PasteBin {
         options.addArguments("--disable-extensions");
         options.addArguments("--dns-prefetch-disable");
         options.addArguments("--disable-gpu");
+        options.addArguments("--proxy-server=http://proxy.lan:3128");
         options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
 //        Proxy proxy = new Proxy();
 //        proxy.setHttpProxy("proxy.lan:3128");
