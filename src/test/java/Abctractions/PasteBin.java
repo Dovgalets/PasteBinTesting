@@ -22,7 +22,7 @@ public abstract class PasteBin {
 //        this();
         ChromeOptions options = new ChromeOptions();
         options.addArguments("enable-automation");
-//        options.addArguments("--headless");
+        options.addArguments("--headless");
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-extensions");
         options.addArguments("--dns-prefetch-disable");
